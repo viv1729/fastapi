@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Pattern Mining</h2>
+    <br>
+    <form method="post" action="/form"  enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="task_name">Task Name</label>
+        <input type="string" class="form-control" name="task_name" id="task_name" placeholder="Enter task name">
+      </div>
+    
+      <div class="form-group">
+        <label for="algo">Select Algo</label>
+        <select class="form-control" name="algo" id="algo">
+            <option>apriori</option>
+            <option>fp-growth</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="columns">Column Names</label>
+        <input type="string" class="form-control" name="columns" id="columns" placeholder="Enter column name(s)" aria-describedby="columnsHelp">
+        <small id="columnsHelp" class="form-text text-muted">Enter column names separated by comma</small>
+      </div>
+
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" name="show_plot" id="show_plot">
+        <label class="form-check-label" for="show_plot">Show Plot</label>
+      <div class="form-group">
+    
+      <div class="form-group">
+        <label for="file">Upload csv file</label>
+        <input type="file" class="form-control-file" name="file" id="file">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+    <br>
+    <br>
+    <p><strong>Output: </strong> {{ result }}</p>
+
+  </div>
+  
+</body>
+</html>
